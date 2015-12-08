@@ -1,36 +1,36 @@
 var express = require('express');
-var Airplane = require('../models/airplane');
+var Drink = require('../models/drink');
 var router = express.Router();
 
 router.route('/')
   .get(function(req, res) {
-    Airplane.find(function(err, airplanes) {
+    Drink.find(function(err, drinks) {
       if (err) return res.status(500).send(err);
-      res.send(airplanes);
+      res.send(drinks);
     });
   })
   .post(function(req, res) {
-    Airplane.create(req.body, function(err, airplane) {
+    Drink.create(req.body, function(err, drink) {
       if (err) return res.status(500).send(err);
-      res.send(airplane);
+      res.send(drink);
     });
   });
 
 router.route('/:id')
   .get(function(req, res) {
-    Airplane.findById(req.params.id, function(err, airplane) {
+    Drink.findById(req.params.id, function(err, drink) {
       if (err) return res.status(500).send(err);
-      res.send(airplane);
+      res.send(drink);
     });
   })
   .put(function(req, res) {
-    Airplane.findByIdAndUpdate(req.params.id, req.body, function(err) {
+    Drink.findByIdAndUpdate(req.params.id, req.body, function(err) {
       if (err) return res.status(500).send(err);
       res.send({'message': 'success'});
     });
   })
   .delete(function(req, res) {
-    Airplane.findByIdAndRemove(req.params.id, function(err) {
+    Drink.findByIdAndRemove(req.params.id, function(err) {
       if (err) return res.status(500).send(err);
       res.send({'message': 'success'});
     });
