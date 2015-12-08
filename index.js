@@ -5,7 +5,7 @@ var app = express();
 
 var mongoose = require('mongoose');
 var Airplane = require('./models/drink');
-mongoose.connect('mongodb://localhost/drinks');
+mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/drinks');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
@@ -17,4 +17,7 @@ app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
-app.listen(3000);
+var port = process.env.PORT || 3000;
+app.listen(port, function() {
+console.log("Listening on " + port);
+});
