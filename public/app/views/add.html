@@ -1,8 +1,16 @@
+<div class="container">
+<div class='col-sm-6'>
 <div class="well">
-<h2>+ add a cocktail</h2>
+	<h2>+ ADD A COCKTAIL</h2>
+	<h3>Start with the name, primary alcohol in the cocktail & an image link.</h3>
+	<h5>On the next page, add in ingredients one at at time.</h5>
+</div>
+</div>
 <form  method="POST" role="form" ng-submit = 'newDrink()'>
-	<div class="form-group">
-		<input type="text" class="form-control" ng-model='name' placeholder = 'Cocktail Name'>
+	<div class='row'>
+	<div class='col-sm-6'>
+		<div class="form-group">
+			<input type="text" class="form-control" ng-model='name' placeholder = 'Cocktail Name'>
 	</div>
 	<div class="form-group">
 		<input type="text" class="form-control" ng-model='alcohol' placeholder = 'Alcohol'>
@@ -10,6 +18,8 @@
 	<div class="form-group">
 		<input type="text" class="form-control" ng-model='image' placeholder = 'Image url'>
 	</div>
-	<button type="submit" class="btn">Submit</button>
+	<button type="submit" class="btn">Add Ingredients &rarr;</button>
+	</div>
+	</div>
 </form>
 </div>
