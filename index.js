@@ -4,7 +4,7 @@ var path = require('path');
 var app = express();
 
 var mongoose = require('mongoose');
-var Airplane = require('./models/drink');
+var drinkhg = require('./models/drink');
 mongoose.connect(process.env.MONGOLAB_URI || 'mongodb://localhost/drinks');
 
 app.use(express.static(path.join(__dirname, 'public')));
