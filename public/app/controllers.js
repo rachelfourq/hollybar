@@ -17,12 +17,9 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
     function($scope, $location, Drink) {
         $scope.name = '';
         $scope.alcohol = '';
-        $scope.ingredients: [
-            {
-                $scope.amount: '',
-                $scope.ingredient: ''
-            }
-        ]
+        $scope.ingredients = [];
+        $scope.amount = '';
+        $scope.ingredient = '';
         $scope.newDrink = function() {
             var postData = {
                 name: $scope.name,
