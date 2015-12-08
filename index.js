@@ -4,14 +4,14 @@ var path = require('path');
 var app = express();
 
 var mongoose = require('mongoose');
-var Airplane = require('./models/airplane');
-mongoose.connect('mongodb://localhost/airplanes');
+var Airplane = require('./models/drink');
+mongoose.connect('mongodb://localhost/drinks');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/api/airplanes', require('./controllers/airplane'));
+app.use('/api/drinks', require('./controllers/drink'));
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/index.html'));
