@@ -6,16 +6,15 @@
 <div class="row">
   <div class="col-sm-6 col-md-4" ng-repeat="cocktail in drinks">
     <div class="thumbnail">
-      <img src="{{cocktail.image}}" alt="...">
+      <img src="{{cocktail.image}}" alt="{{ cocktail.name }}">
       <div class="caption">
         <h3>{{cocktail.name}}</h3>
-        <p><a href="/drink/{{cocktail._id}}" class="btn btn-default" role="button">View</a></p>
+        <a href="/drink/{{cocktail._id}}" class="btn btn-default" role="button">Get Recipe</a>
       </div>
     </div>
   </div>
-<!-- closes row 1 -->
 </div> 
-
-<!-- closes all rows-->
+<!-- end row --> 
+<!-- end cocktail_rows -->
 </div>
 
