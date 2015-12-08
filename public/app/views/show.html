@@ -1,5 +1,13 @@
+<div ng-model="drink">
+	<p>{{ drink.name }}</p>
+	<p>{{ drink.alcohol }}</p>
+	<img src="{{ drink.image }}">
+	<p ng-repeat="ingredient in drink.ingredients">{{ ingredient.amount }} {{ ingredient.ingredient }}</p>
+</div>
+
 <div class="well">
-<form  method="POST" role="form" ng-submit = 'addIngredients()'>
+
+<form  method="POST" role="form" ng-submit = 'addIngredients(amount, ingredient)'>
 	<div class="form-group">
 		<input type="text" class="form-control" ng-model='amount' placeholder = 'Amount'>
 	</div>
