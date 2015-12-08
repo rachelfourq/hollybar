@@ -12,12 +12,11 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
         $scope.drink = data;
         $scope.amount = '';
         $scope.ingredient = '';
-        $scope.addIngredients = function() {
-            var postData = {
-                $scope.drink.ingredients.push({amount: $scope.amount, ingredient: $scope.ingredient});
-                $scope.drink.$save();
-                location.reload();
-            }
+        $scope.addIngredients = function(data) {
+            var postData = data.ingredients.push({amount: $scope.amount, ingredient: $scope.ingredient});
+            data.$save();
+            location.reload();
+
         }
     }, function error(data) {
         console.log(data);
@@ -33,13 +32,14 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
                 name: $scope.name,
                 alcohol: $scope.alcohol,
                 image: $scope.image,
-                ingredients: $scope.ingredients;
+                ingredients: $scope.ingredients
+            };
             var newDrink = new Drink(postData);
             newDrink.$save();
             $location.path('/drink/' + newDrink._id)
         }
     }
-}]).controller('DrinkSearchCtrl', ['$scope', '$location', 'Drink',
+]).controller('DrinkSearchCtrl', ['$scope', '$location', 'Drink',
     function($scope, $location, Drink) {
         $scope.resultDrinks = [];
         Drink.query(function success(data) {
