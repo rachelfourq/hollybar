@@ -1,4 +1,4 @@
-var app = angular.module('DrinkApp', ['ngRoute']);
+var app = angular.module('DrinkApp', ['DrinkServices', 'DrinkCtrls', 'ngRoute', ]);
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
     $routeProvider.when('/', {
         templateUrl: 'app/views/drinks.html'
@@ -9,7 +9,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'DrinkCtrl'
     }).when("/drinks/:id", {
         templateUrl: "app/views/show.html",
-        controller: 'DrinkShowCtrl'
+        controller: "DrinkShowCtrl"
     }).when("/drinks/new", {
         templateUrl: "app/views/add.html",
         controller: 'NewDrinkCtrl'
