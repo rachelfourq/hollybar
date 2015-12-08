@@ -103,3 +103,16 @@ html {
 }
 
 
+/*error page */
+
+.error {
+	text-align: center;
+	width: 100%;
+}
+
+.errorimage {
+	margin-left: 37%;
+	
+}
+
+
