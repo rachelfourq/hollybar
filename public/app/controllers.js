@@ -12,9 +12,13 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
         $scope.drink = data;
         $scope.amount = '';
         $scope.ingredient = '';
-        $scope.addIngredients = function(data) {
-            var postData = data.ingredients.push({amount: $scope.amount, ingredient: $scope.ingredient});
-            data.$save();
+        $scope.addIngredients = function(amount, ingredient) {
+            console.log(amount);
+            $scope.amount = amount;
+            console.log($scope.amount);
+            $scope.ingredient = ingredient;
+            $scope.drink.ingredients = $scope.drink.ingredients.push({amount: $scope.amount, ingredient: $scope.ingredient});
+            $scope.drink.$save();
             location.reload();
 
         }
@@ -36,7 +40,7 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
             };
             var newDrink = new Drink(postData);
             newDrink.$save();
-            $location.path('/drink/' + newDrink.id)
+            $location.path('/drink/' + newDrink._id)
         }
     }
 ]).controller('DrinkSearchCtrl', ['$scope', '$location', 'Drink',
