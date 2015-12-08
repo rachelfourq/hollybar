@@ -4,10 +4,10 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'app/views/drinks.html'
     }).when('/about', {
         templateUrl: 'app/views/about.html'
-    }).when("/drinks", {
+    }).when("/alldrinks", {
         templateUrl: "app/views/all.html",
         controller: 'DrinkCtrl'
-    }).when("/drinks/:id", {
+    }).when("/drink/:id", {
         templateUrl: "app/views/show.html",
         controller: "DrinkShowCtrl"
     }).when("/new", {
