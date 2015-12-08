@@ -71,6 +71,15 @@ html {
 
 }
 
+.landingtext a {
+	color: #831715;
+}
+
+.landingtext a:hover {
+	color: #831715;
+	text-decoration: none;
+}
+
 
 /* allDrinks */
 .thumbnail {
