@@ -62,3 +62,18 @@ html {
 
 }
 
+
+/* allDrinks */
+.thumbnail {
+	margin: auto 1em;
+	height: 400px;
+}
+
+.thumbnail img{
+	height: 300px;
+	width: 300px;
+	background-image: url('../img/hollydefault.jpg');
+	background-repeat: no-repeat;
+	background-position: contain;
+}
+
