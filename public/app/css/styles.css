@@ -1,6 +1,11 @@
 /*font-family: 'Roboto Slab', serif;
 
-font-family: 'Roboto', sans-serif;*/
+font-family: 'Roboto', sans-serif;
+
+colors: #009900 green 
+
+*/
+
 
 /* reseting base */
 * {
@@ -18,6 +23,11 @@ html {
 	width: 100%;
 }
 
+
+
+/*landing page */
+
+
 #landing {
 	background-image: url('../img/holly.jpeg');
 	background-repeat: no-repeat;
@@ -31,7 +41,22 @@ html {
 	z-index: -1;
 }
 
-#landing h1 {
-	margin: 10vw 3em;
+
+.landingtext {
+	width: 30vw;
+	padding: 2vw;
+	margin: 10vw;
+	background-color: rgba(255,255,255,0.4);
+}
+.landingtext h1 {
+	font-family: 'Roboto Slab', serif;
+	font-size: 3em;
+	color: #009900
+}
+
+.landingtext h3 {
+	color: #424242;
+	font-size: 2em;
+
 }
 
