@@ -27,7 +27,7 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
                 ingredients: [
                     {
                         amount: $scope.amount,
-                        ingredient: $scope.ingredient;
+                        ingredient: $scope.ingredient
                     }
                 ]
             };
