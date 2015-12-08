@@ -5,7 +5,8 @@ var DrinkSchema = new mongoose.Schema({
   ingredients: [
   	{
   		ingredient: String,
-  		amount: String
+  		amount: String,
+  		alcohol: String
   	}
   ]
 });
