@@ -1,19 +1,21 @@
-<div class="navbar-fixed" role="navigation" ng-controller="NavCtrl">
+<nav class="navbar navbar-default" role="navigation" ng-controller="NavCtrl">
   <!-- Brand and toggle get grouped for better mobile display -->
-  <nav>
-  <div class="nav-wrapper">
-    <a class="brand-logo" href="/">Secret Recipes</a>
+  <div class="navbar-header">
+    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+      <span class="sr-only">Toggle navigation</span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </button>
+    <a class="navbar-brand" href="/">Secret Recipes</a>
   </div>
-  <ul class="right">
-      <li><a href="/drinks">All</a></li>
-      <li><a href="/drinks/new">New Drink</a></li> <!-- this is a javascript function -->
+
+  <!-- Collect the nav links, forms, and other content for toggling -->
+  <div class="collapse navbar-collapse navbar-ex1-collapse">
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/drinks/all" ng-hide="isLoggedIn()">Drinks </a></li>
+      <li><a href="/login" ng-hide="isLoggedIn()">log in </a></li>
+      <li><a ng-click="logout()" ng-show="isLoggedIn()">log out</a></li> <!-- this is a javascript function -->
     </ul>
-    <form>
-        <div class="input-field">
-          <input id="search" type="search" required>
-          <label for="search"><i class="material-icons">search</i></label>
-          <i class="material-icons">close</i>
-        </div>
-      </form>
-  </nav>
-</div>
+  </div><!-- /.navbar-collapse -->
+</nav>
