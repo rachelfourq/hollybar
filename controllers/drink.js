@@ -44,13 +44,15 @@ router.route('/:id')
     });
   })
   .post(function(req, res) {
-    ingredients = [];
-    Drink.findById(req.params.id, req.body, function(err, drink) {
+    Drink.findById(req.params.id, function(err, drink) {
       console.log(req.body)
+      console.log(drink)
       drink.ingredients.push(req.body);
-      ingredients.save();
+
+      drink.save(function(err) {
       if (err) return res.status(500).send(err);
       res.send({'message': 'success'});
+    })
     });
   })
 

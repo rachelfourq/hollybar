@@ -1,14 +1,14 @@
 var mongoose = require('mongoose');
 
-var IngredientSchema = new mongoose.Schema({
-	ingredient: String,
-	amount: String
-});
-
 var DrinkSchema = new mongoose.Schema({
   name: String,
   alcohol: String,
-  ingredients: [IngredientSchema];
+  ingredients: [
+  	{
+  		ingredient: String,
+  		amount: String
+  	}
+  ]
 });
 
 module.exports = mongoose.model('Drink', DrinkSchema);
