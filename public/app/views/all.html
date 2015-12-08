@@ -1,12 +1,13 @@
+<div class="container">
 <div class="cocktail_rows">
-  <div>
-  <h1>All Cocktails</h1>
+  <div class="page-header">
+    <h1>Spread some cheer! <small>Select a drink for your next holiday gathering by looking around at user submitted festive drinks.</small></h1>
   </div>
 <!-- starts row 1 -->
 <div class="row">
   <div class="col-sm-6 col-md-4" ng-repeat="cocktail in drinks">
     <div class="thumbnail">
-      <img src="{{cocktail.image}}" alt="{{ cocktail.name }}">
+      <img src="{{cocktail.image}}" title="">
       <div class="caption">
         <h3>{{cocktail.name}}</h3>
         <a href="/drink/{{cocktail._id}}" class="btn btn-default" role="button">Get Recipe</a>
@@ -16,5 +17,6 @@
 </div> 
 <!-- end row --> 
 <!-- end cocktail_rows -->
+</div>
 </div>
 

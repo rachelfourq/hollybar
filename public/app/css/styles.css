@@ -23,6 +23,15 @@ html {
 	width: 100%;
 }
 
+.navbar {
+	background-color: #831715;
+}
+
+.navbar a {
+	color: #fff !important;
+	font-family: 'Roboto Slab', serif;
+}
+
 
 
 /*landing page */
@@ -63,15 +72,23 @@ html {
 
 /* allDrinks */
 .thumbnail {
-	margin: auto 1em;
-	height: 400px;
+	margin: auto 1em 4em 1em;
+	height: 440px;
+	border: 4px solid #009900;
 }
 
 .thumbnail img{
 	height: 300px;
 	width: 300px;
+	margin: 0 auto;
 	background-image: url('../img/hollydefault.jpg');
 	background-repeat: no-repeat;
 	background-position: contain;
+	outline: none;
 }
+
+.thumbnail a {
+	float: right;
+}
+
 
