@@ -36,4 +36,23 @@ router.route('/:id')
     });
   });
 
+ router.route('/:id/ingredients')
+  .get(function(req, res) {
+    Drink.findById(req.params.id, function(err, drink) {
+      if (err) return res.status(500).send(err);
+      res.send(drink);
+    });
+  })
+  .post(function(req, res) {
+    ingredients = [];
+    Drink.findById(req.params.id, req.body, function(err, drink) {
+      console.log(req.body)
+      drink.ingredients.push(req.body);
+      ingredients.save();
+      if (err) return res.status(500).send(err);
+      res.send({'message': 'success'});
+    });
+  })
+
+
 module.exports = router;
