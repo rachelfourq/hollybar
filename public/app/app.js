@@ -1,9 +1,9 @@
-var app = angular.module('AirplaneApp', ['ngRoute']);
+var app = angular.module('DrinkApp', ['ngRoute']);
 
 app.config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
   $routeProvider
   .when('/', {
-    templateUrl: 'app/views/airplanes.html'
+    templateUrl: 'app/views/drinks.html'
   })
   .when('/about', {
     templateUrl: 'app/views/about.html'
