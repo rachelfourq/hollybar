@@ -1,7 +1,7 @@
 {
   "name": "airplanes",
   "version": "1.0.0",
-  "description": "",
+  "description": "holiday party cocktails just got festive",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -12,5 +12,14 @@
     "body-parser": "^1.14.1",
     "express": "^4.13.3",
     "mongoose": "^4.2.9"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebrillhart/hollybar.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ebrillhart/hollybar/issues"
+  },
+  "homepage": "https://github.com/ebrillhart/hollybar#readme"
 }
