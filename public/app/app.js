@@ -6,7 +6,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         templateUrl: 'app/views/about.html'
     }).when("/drinks", {
         templateUrl: "app/views/all.html",
-        controller: 'DrinksCtrl'
+        controller: 'DrinkCtrl'
     }).when("/drinks/:id", {
         templateUrl: "app/views/show.html",
         controller: 'DrinkShowCtrl'
@@ -15,7 +15,7 @@ app.config(['$routeProvider', '$locationProvider', function($routeProvider, $loc
         controller: 'NewDrinkCtrl'
     }).when("/drink/search", {
         templateUrl: "app/views/search.html",
-        controller: 'DrinksSearchCtrl'
+        controller: 'DrinkSearchCtrl'
     }).otherwise({
         templateUrl: 'app/views/404.html'
     });
