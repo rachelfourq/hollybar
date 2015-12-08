@@ -17,6 +17,7 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
     function($scope, $location, Drink) {
         $scope.name = '';
         $scope.alcohol = '';
+        $scope.image = '';
         $scope.ingredients = [];
         $scope.amount = '';
         $scope.ingredient = '';
@@ -24,6 +25,7 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
             var postData = {
                 name: $scope.name,
                 alcohol: $scope.alcohol,
+                image: $scope.image,
                 ingredients: [
                     {
                         amount: $scope.amount,
