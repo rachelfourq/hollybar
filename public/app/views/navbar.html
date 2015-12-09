@@ -12,13 +12,14 @@
 
   <!-- Collect the nav links, forms, and other content for toggling -->
   <div class="collapse navbar-collapse navbar-ex1-collapse">
-    <ul class="nav navbar-nav navbar-right">
-      <li><a href="/alldrinks">Drinks</a></li>
-    </ul>
     <form class="navbar-form navbar-right" role="search" ng-submit="drinkSearch(search)">
         <div class="form-group">
           <input type="text" class="form-control" placeholder="Search By Drink Base" ng-model="search">
         </div>
-      </form>
+    </form>
+    <ul class="nav navbar-nav navbar-right">
+      <li><a href="/alldrinks">Drinks</a></li>
+      <li><a href="/new">Add a Recipe</a></li>
+    </ul>
   </div><!-- /.navbar-collapse -->
 </nav>

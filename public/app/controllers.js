@@ -1,25 +1,29 @@
 angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope', 'Drink', function($scope, Drink) {
     $scope.drinks = [];
     Drink.query(function success(data) {
+        console.log(data);
         $scope.drinks = data;
     }, function error(data) {
         console.log(data);
     });
-}]).controller("DrinkShowCtrl", ["$scope", "$routeParams", "Drink", function($scope, $routeParams, Drink) {
+}]).controller("DrinkShowCtrl", ["$scope", "$routeParams", '$location', "Drink", "Ingredients", function($scope, $routeParams, $location, Drink, Ingredients) {
     Drink.get({
         id: $routeParams.id
     }, function success(data) {
         $scope.drink = data;
         $scope.amount = '';
         $scope.ingredient = '';
-        $scope.addIngredients = function(amount, ingredient) {
-            console.log(amount);
-            $scope.amount = amount;
-            console.log($scope.amount);
-            $scope.ingredient = ingredient;
-            $scope.drink.ingredients = $scope.drink.ingredients.push({amount: $scope.amount, ingredient: $scope.ingredient});
-            $scope.drink.$save();
-            location.reload();
+        $scope.addIngredients = function() {
+            var ingredientObj = {amount: $scope.amount, ingredient: $scope.ingredient};
+            Ingredients.saveIngredients({id: $scope.drink._id}, ingredientObj, function success(data) {
+                console.log(data);
+                $scope.drink.ingredients.push(ingredientObj);
+                $scope.amount = $scope.ingredient = '';
+            }, function error(data) {
+                console.log(data);
+            })
+            console.log($scope.drink);
+            $location.path('/show/' + data._id);
 
         }
     }, function error(data) {
@@ -40,7 +44,8 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
             };
             var newDrink = new Drink(postData);
             newDrink.$save();
-            $location.path('/drink/' + newDrink._id)
+            $scope.drink = newDrink
+            $location.path('/alldrinks');
         }
     }
 ]).controller('DrinkSearchCtrl', ['$scope', '$location', 'Drink',

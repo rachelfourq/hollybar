@@ -71,6 +71,15 @@ html {
 
 }
 
+.landingtext a {
+	color: #831715;
+}
+
+.landingtext a:hover {
+	color: #831715;
+	text-decoration: none;
+}
+
 
 /* allDrinks */
 .thumbnail {
@@ -91,6 +100,29 @@ html {
 
 .thumbnail a {
 	float: right;
+}
+
+
+/*error page */
+
+.error {
+	text-align: center;
+	width: 100%;
+}
+
+.errorimage {
+	margin-left: 37%;
+	
+}
+
+.footer a {
+	color: #009900 !important;
+}
+
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding-left: 2em;
 }
 
 
