@@ -29,6 +29,9 @@ router.route('/:id')
       res.send({'message': 'success'});
     });
   })
+  .post(function(req, res) {
+
+  })
   .delete(function(req, res) {
     Drink.findByIdAndRemove(req.params.id, function(err) {
       if (err) return res.status(500).send(err);
