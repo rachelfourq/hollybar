@@ -126,8 +126,11 @@ html {
 }
 
 .drinkShow {
-	text-align: left;
-	margin-top: 30px;
+	text-align: center;
+	background-color: rgba(0,153,0, 0.4);
+	border-right: 5px solid #831715;
+	padding: auto 2em;
+	
 }
 
 .drinkAdd {
@@ -135,8 +138,17 @@ html {
 }
 
 .showImage {
-	max-height: 500px;
-	margin: 30px;
+	max-height: 300px;
+
+	
+}
+
+.drinkPage {
+	margin-top: 30px;
+}
+
+.drinkPage form {
+	
 }
 
 
