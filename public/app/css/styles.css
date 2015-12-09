@@ -116,3 +116,10 @@ html {
 }
 
 
+.footer {
+	position: absolute;
+	bottom: 0;
+	padding-left: 2em;
+}
+
+
