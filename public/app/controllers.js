@@ -55,7 +55,7 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
             };
             var newDrink = new Drink(postData);
             newDrink.$save();
-            $scope.drink = newDrink
+            $scope.drink = newDrink;
             $location.path('/alldrinks');
         }
     }
