@@ -1,11 +1,12 @@
 angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope', 'Drink', function($scope, Drink) {
     $scope.drinks = [];
     Drink.query(function success(data) {
+        console.log(data);
         $scope.drinks = data;
     }, function error(data) {
         console.log(data);
     });
-}]).controller("DrinkShowCtrl", ["$scope", "$routeParams", '$location', "Drink", function($scope, $routeParams, $location, Drink) {
+}]).controller("DrinkShowCtrl", ["$scope", "$routeParams", '$location', "Drink", "Ingredients", function($scope, $routeParams, $location, Drink, Ingredients) {
     Drink.get({
         id: $routeParams.id
     }, function success(data) {
@@ -14,7 +15,7 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
         $scope.ingredient = '';
         $scope.addIngredients = function() {
             var ingredientObj = {amount: $scope.amount, ingredient: $scope.ingredient};
-            Drink.saveIngredients({id: $scope.drink._id}, ingredientObj, function success(data) {
+            Ingredients.saveIngredients({id: $scope.drink._id}, ingredientObj, function success(data) {
                 console.log(data);
                 $scope.drink.ingredients.push(ingredientObj);
                 $scope.amount = $scope.ingredient = '';
