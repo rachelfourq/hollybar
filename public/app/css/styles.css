@@ -115,6 +115,9 @@ html {
 	
 }
 
+.footer a {
+	color: #009900 !important;
+}
 
 .footer {
 	position: absolute;
