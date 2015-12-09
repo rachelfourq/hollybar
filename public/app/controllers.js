@@ -44,7 +44,8 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
             };
             var newDrink = new Drink(postData);
             newDrink.$save();
-            $location.path('/drink/' + newDrink._id);
+            $scope.drink = newDrink
+            $location.path('/alldrinks');
         }
     }
 ]).controller('DrinkSearchCtrl', ['$scope', '$location', 'Drink',
