@@ -125,4 +125,12 @@ html {
 	padding-left: 2em;
 }
 
+.drinkShow {
+	text-align: center;
+}
+
+.drinkAdd {
+	float: left !important;
+}
+
 
