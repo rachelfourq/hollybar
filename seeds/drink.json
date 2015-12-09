@@ -1,0 +1,28 @@
+[
+{
+    "name": "Candy Cane Cocktail",
+    "alcohol": "vodka",
+    "ingredients": [
+      {
+        "amount": "1",
+        "ingredient": "candy cane (crushed)"
+      },
+      {
+        "amount": "2 oz",
+        "ingredient": "strawberry vodka"
+      },
+      {
+        "amount": "4 dashes",
+        "ingredient": "white creme de menthe"
+      },
+      {
+        "amount": "2.5 oz",
+        "ingredient": "Cranberry Juice"
+      },
+      {
+        "ingredient": "Ice cubes"
+      }
+    ]
+  }
+]
+ 

@@ -1,6 +1,7 @@
 angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope', 'Drink', function($scope, Drink) {
     $scope.drinks = [];
     $scope.resultDrinks = [];
+    console.log('hit' + $scope.resultDrinks)
     Drink.query(function success(data) {
         console.log(data);
         $scope.drinks = data;
