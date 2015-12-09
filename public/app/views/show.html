@@ -1,12 +1,14 @@
 <div class="container">
 <div class="row">
-	<div class="col-sm-8 col-sm-offset-2">
+	<div class="col-sm-6 drinkShow">
 		<div ng-model="drink">
 			<p>{{ drink.name }}</p>
 			<p>{{ drink.alcohol }}</p>
-			<img src="{{ drink.image }}">
 			<p ng-repeat="ingredient in drink.ingredients">{{ ingredient.amount }} {{ ingredient.ingredient }}</p>
 		</div>
+	</div>
+	<div class="col-sm-6" id="showImage">
+		<img src="{{ drink.image }}">
 	</div>
 </div>
 

@@ -126,11 +126,15 @@ html {
 }
 
 .drinkShow {
-	text-align: center;
+	text-align: left;
 }
 
 .drinkAdd {
 	float: left !important;
+}
+
+#showImage {
+	width: 400px;
 }
 
 
