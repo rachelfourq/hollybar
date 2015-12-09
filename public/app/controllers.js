@@ -1,11 +1,22 @@
 angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope', 'Drink', function($scope, Drink) {
     $scope.drinks = [];
+    $scope.resultDrinks = [];
     Drink.query(function success(data) {
         console.log(data);
         $scope.drinks = data;
+        $scope.resultDrinks = data;
     }, function error(data) {
         console.log(data);
     });
+    $scope.drinkSearch = function(search) {
+            var filteredDrinks = [];
+            $scope.drinks.forEach(function(drink) {
+                if (drink.alcohol.toLowerCase().indexOf(search) > -1) {
+                    filteredDrinks.push(drink)
+                }
+            })
+            $scope.resultDrinks = filteredDrinks;
+        }
 }]).controller("DrinkShowCtrl", ["$scope", "$routeParams", '$location', "Drink", "Ingredients", function($scope, $routeParams, $location, Drink, Ingredients) {
     Drink.get({
         id: $routeParams.id
@@ -48,22 +59,23 @@ angular.module('DrinkCtrls', ['DrinkServices']).controller('DrinkCtrl', ['$scope
             $location.path('/alldrinks');
         }
     }
-]).controller('DrinkSearchCtrl', ['$scope', '$location', 'Drink',
-    function($scope, $location, Drink) {
-        $scope.resultDrinks = [];
-        Drink.query(function success(data) {
-            $scope.resultDrinks = data;
-        }, function error(data) {
-            console.log(data);
-        });
-        $scope.drinkSearch = function(search) {
-            var filteredDrinks = [];
-            $scope.drinks.forEach(function(drink) {
-                if (drink.alcohol.toLowerCase().indexOf(search) > -1) {
-                    filteredDrinks.push(drink)
-                }
-            })
-            $scope.resultDrinks = filteredDrinks;
-        }
-    }
 ]);
+// .controller('DrinkSearchCtrl', ['$scope', '$location', 'Drink',
+//     function($scope, $location, Drink) {
+//         $scope.resultDrinks = [];
+//         Drink.query(function success(data) {
+//             $scope.resultDrinks = data;
+//         }, function error(data) {
+//             console.log(data);
+//         });
+//         $scope.drinkSearch = function(search) {
+//             var filteredDrinks = [];
+//             $scope.drinks.forEach(function(drink) {
+//                 if (drink.alcohol.toLowerCase().indexOf(search) > -1) {
+//                     filteredDrinks.push(drink)
+//                 }
+//             })
+//             $scope.resultDrinks = filteredDrinks;
+//         }
+//     }
+// ]);
